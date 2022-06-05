@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Image,Profile,Comment
+from .forms import PostForm
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
 
