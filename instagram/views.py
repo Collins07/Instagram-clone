@@ -93,8 +93,7 @@ def user_profile(request, username):
 
     }
 
-    return render(request, 'user_profile.html', params)    
-
+    return render(request, 'user_profile.html', params)   
 
 
 @login_required(login_url='login')
@@ -106,7 +105,7 @@ def post_comment(request, id):
         if form.is_valid():
             savecomment = form.save(commit=False)
             savecomment.post = image
-            savecomment.user = request.user.profile
+            savecomment.user = request.user
             savecomment.save()
             return HttpResponseRedirect(request.path_info)
     else:
@@ -117,4 +116,25 @@ def post_comment(request, id):
 
     }
     return render(request, 'single_post.html', params)
+
+
+
+
+
+@login_required(login_url='login')
+def search_profile(request):
+    if 'search_user' in request.GET and request.GET['search_user']:
+        name = request.GET.get("search_user")
+        results = Profile.search_profile(name)
+        print(results)
+        message = f'name'
+        params = {
+            'results': results,
+            'message': message
+        }
+        return render(request, 'results.html', params)
+    else:
+        message = "You haven't searched for any image category"
+    return render(request, 'results.html', {'message': message})
+
     

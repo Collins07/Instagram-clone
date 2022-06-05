@@ -9,6 +9,8 @@ urlpatterns = [
     path('user_profile/<username>/', views.user_profile, name='user_profile'),
     path('new/status/<username>', views.new_status, name='newStatus'),
     path('post/<id>', views.post_comment, name='comment'),
+    path('search/', views.search_profile, name='search'),
+
 ]
 
 
