@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import Image,Profile,Comment
+from .models import Image,Profile,Comment,Follow
 from .forms import PostForm, UpdateUserForm, UpdateUserProfileForm, CommentForm
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -85,11 +85,21 @@ def user_profile(request, username):
         return redirect('profile', username=request.user.username)
     user_posts = user_prof.profile.posts.all()
 
+    followers = Follow.objects.filter(followed=user_prof.profile)
+    follow_status = None
+    for follower in followers:
+        if request.user.profile == follower.follower:
+            follow_status = True
+        else:
+            follow_status = False
+
 
 
     params = {
         'user_prof': user_prof,
         'user_posts': user_posts,
+        'followers': followers,
+        'follow_status': follow_status
 
     }
 
@@ -138,3 +148,18 @@ def search_profile(request):
     return render(request, 'results.html', {'message': message})
 
     
+def unfollow(request, to_unfollow):
+    if request.method == 'GET':
+        user_profile2 = Profile.objects.get(pk=to_unfollow)
+        unfollow_d = Follow.objects.filter(follower=request.user.profile, followed=user_profile2)
+        unfollow_d.delete()
+        return redirect('user_profile', user_profile2.user.username)
+
+
+
+def follow(request, to_follow):
+    if request.method == 'GET':
+        user_profile3 = Profile.objects.get(pk=to_follow)
+        follow_s = Follow(follower=request.user.profile, followed=user_profile3)
+        follow_s.save()
+        return redirect('user_profile', user_profile3.user.username)
