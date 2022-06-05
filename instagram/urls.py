@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='homePage'),
+    path('profile/<username>/', views.profile, name='profile')
 ]
 
 
