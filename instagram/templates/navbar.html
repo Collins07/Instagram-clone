@@ -1,59 +1,42 @@
-<nav class="navbar navbar-inverse">
-    <!-- <div class="container-fluid">
+{% load static %}
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'homePage' %}">Instagram</a>
+        <h1 class="logo"><a href="/"><img src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" alt="" style="width:35px"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" alt="" style="width:135px"></a></h1>
       </div>
-
+      <!-- Adding a search form  -->
       <div class="">
-        <a href="/accounts/register">Register</a>
+          <form class="navbar-form navbar-left" id="searchform" action="{% url 'search' %}" >
+            <input name="search_user" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder="Search">
+           <i class="spinner "></i>
+          </form>
+        <div class=" nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+            <span class="pull-right acount">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <button type="button" class="btn btn-default btn-sm">
+                      <span class="glyphicon glyphicon-user"></span> Account 
+                    </button>
+                            <span class="caret"></span>
+                        </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="{% url 'homePage' %}">Home</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'profile' user.username %}">Profile</a>
+                    </li>
+                    <li>
+                      <a href="/logout">Logout</a>
+                    </li>
+                  </ul>
+                </li>
+            </span>
+          {% else %}
+            <a class='btn btn-default' href="/accounts/login">Login</a>
+          {% endif %}
       </div>
-      <div>
-        <a href="/accounts/login">Login</a>
-      </div>
-      <div>
-        <a href="/logout">Logout</a>
-      </div> -->
-      
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Instagram</a>
-        </div>
-
-        <!-- Adding a search form  -->
-    <div class="col-sm-4 col-md-4 navbar-right">
-      <div class="col-sm-4 col-md-4 navbar-right">
-
-        <form class="mb-0 h1 ml-auto mr-auto" id="searchform" action="{% url 'search' %}" >
-          <input name="search_user" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder="Search">
-         <i class="spinner "></i>
-        </form>
-      </div>
-
-
     </div>
-    <!-- search form end -->
-
-    <div class="col-sm-6 col-md-6">
-      {% if user.is_authenticated %}
-
-
-
-            <li>
-              <a href="{%url 'homePage'%}">Home</a>
-            </li>
-
-            <li>
-              <a href="/logout">Logout</a>
-            </li>
-
-
-
-      {% else %}
-      <li>
-        <a class='btn btn-default' href="/accounts/login">Login</a>
-      </li>
-
-      {% endif %}
-    </div>
-  </div>
-</nav> 
+  </nav>

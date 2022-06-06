@@ -19,8 +19,7 @@ def index(request):
             post = form.save()
             post.user = request.user
             post.save()
-
-
+            
             return HttpResponseRedirect(request.path_info)
     else:
         form = PostForm()
@@ -28,9 +27,9 @@ def index(request):
         'images': images,
         'form': form,
         'users': users,
+
     }
-
-
+    
     return render(request, 'index.html', params)
    
 
