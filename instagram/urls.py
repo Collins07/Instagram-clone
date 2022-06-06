@@ -10,8 +10,10 @@ urlpatterns = [
     path('new/status/<username>', views.new_status, name='newStatus'),
     path('post/<id>', views.post_comment, name='comment'),
     path('search/', views.search_profile, name='search'),
-    path('unfollow/<to_unfollow>', views.unfollow, name='unfollow'),
-    path('follow/<to_follow>', views.follow, name='follow')
+    #path('unfollow/<to_unfollow>', views.unfollow, name='unfollow'),
+    #path('follow/<to_follow>', views.follow, name='follow'),
+    path('like', views.like_post, name='like_post'),
+
 
 ]
 

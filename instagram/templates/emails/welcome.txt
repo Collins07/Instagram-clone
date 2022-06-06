@@ -1,0 +1,3 @@
+Hello {{name}}
+
+My name is Collins Nyakoe, welcome to my InstaClone. You will find the most amazing features of this app. Enjoy
