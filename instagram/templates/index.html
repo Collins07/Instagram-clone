@@ -88,18 +88,20 @@
     </div>
     {% endfor %}
 </div>
-<div class="col-md-4 mt-4 userinfo" id="visit">
-    <div class="row">
-        <div class="col-md-3 ml-2">
-            <img class="rounded-circle user-img" src="{{image.user.profile.profile_photo.url}}">
-        </div>
-        <div class="col-md-6 mt-4 user-detail">
-            <span class=" text-secondary"><a
-                    href="{% url 'profile' user.username %}"><span class="active" >Active:</span> {{ user.username }}</a></span> <br>
-            <span class=" inname">{{ user.profile.name }}</span>
-        </div>
-    </div>
+<div class="col-md-4 mt-4 userinfo" >
+    
     <div class="row" id="others">
+        <div class="row">
+            <div class="col-md-3 ml-2">
+                <img class="rounded-circle user-img" src="{{image.user.profile.profile_photo.url}}">
+            </div>
+            <div class="col-md-6 mt-4 user-detail">
+                <span id="nameof" class=" text-secondary"><a
+                        href="{% url 'profile' user.username %}"><span class="active" >Active:</span> {{ user.username }}</a></span> <br>
+                <span class=" inname">{{ user.profile.name }}</span>
+            </div>
+        </div>
+
         <div class="col-md-10">
             <div class="card mt-4 mr-2 ml-2">
                 <br>
