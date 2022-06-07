@@ -1,7 +1,7 @@
 {%extends "django_registration/base.html"%}
 {% load bootstrap3 %}
 {% block content %}
-<div class="container">
+<div  class="container" >
   <div class="row">
     <!-- Empty div -->
     <div class="col-md-4"></div>
@@ -20,7 +20,7 @@
     </div>
 
 
-      <div class="panel panel-default">
+      <div class="panel panel-default" id="login" >
 
         <div class="panel-heading">
           <h3 class="text-center">Sign In</h3>
@@ -32,7 +32,7 @@
             {% bootstrap_form form%}
 
             <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Login">
+              <input id="loginbutton" type="submit" class="btn btn-primary btn-sm" value="Login">
             </div>
 
             <input type="hidden" name="next" value="{{next}}">
@@ -43,7 +43,7 @@
             <h3>Don't have an Account?</h3>
           </div>
           <a href="/accounts/register">
-            <input type="click" name="" value="Register" class="btn btn-primary btn-block">
+            <input id="register" type="click" name="" value="Register" class="btn btn-primary btn-block">
           </a>
 
         </div>

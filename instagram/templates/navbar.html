@@ -1,13 +1,14 @@
 {% load static %}
+{% load bootstrap3 %}
 
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <h1 class="logo"><a href="/"><img src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" alt="" style="width:35px"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" alt="" style="width:135px"></a></h1>
       </div>
       <!-- Adding a search form  -->
       <div class="">
-          <form class="navbar-form navbar-left" id="searchform" action="{% url 'search' %}" >
+          <form  class="navbar-form navbar-left" id="searchform" action="{% url 'search' %}" >
             <input name="search_user" autocomplete="off" id="searching" class="form-control d-none d-md-block" placeholder="Search">
            <i class="spinner "></i>
           </form>
@@ -35,7 +36,7 @@
                 </li>
             </span>
           {% else %}
-            <a class='btn btn-default' href="/accounts/login">Login</a>
+            <a id="login1" class='btn btn-default' href="/accounts/login">Login</a>
           {% endif %}
       </div>
     </div>

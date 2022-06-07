@@ -38,7 +38,7 @@ the stylesheet is stored and media files and the `manage.py` file where the main
 * Follow other users and see their pictures on my timeline.  
 * Leave a comment on posts. 
 
-[Go Back to the top](##-Table-of-Contents)
+[Go Back to the top](##Table-of-Contents)
 
 
 ### Requirements
@@ -74,7 +74,7 @@ git clone https://github.com/Collins07/Instagram-clone.git
     ``` 
 5. Open the application on your browser `http://127.0.0.1:8000/`
 
-[Go Back to the top](##-Table-of-Contents)
+[Go Back to the top](##Table-of-Contents)
 
 
 
@@ -93,13 +93,13 @@ git clone https://github.com/Collins07/Instagram-clone.git
 * Programming with Mosh
 
 * Code With Harry (youtube channel)
-[Go Back to the top](##-Table-of-Contents)
+[Go Back to the top](##Table-of-Contents)
 
 
 ##  Live Link  
  Click [View Site]()  to visit the site
 
- [Go Back to the top](##-Table-of-Contents)
+ [Go Back to the top](##Table-of-Contents)
 
 ## Contact Information 
 Any query? Contact me at [collinsabaya07@gmail.com]
@@ -128,4 +128,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-[Go Back to the top](##-Table-of-Contents)
+[Go Back to the top](##Table-of-Contents)

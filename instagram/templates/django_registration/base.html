@@ -1,5 +1,6 @@
-{% load bootstrap3 %}
+
 {% load static %}
+{% load bootstrap3 %}
 
 <!DOCTYPE html>
 <html>
@@ -7,6 +8,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
 
 
   {%if title%}
@@ -17,6 +20,7 @@
 
   {% block styles %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   {% endblock %}
 
 </head>
