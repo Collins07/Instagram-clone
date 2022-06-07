@@ -177,3 +177,9 @@ def like_post(request, id):
     image.likes = image.likes + 1
     image.save()
     return redirect('index')
+
+def single_image_like(request, id):
+    image = Image.objects.get(id=id)
+    image.likes = image.likes + 1
+    image.save()
+    return redirect('homePage')    
