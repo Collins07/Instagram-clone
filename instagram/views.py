@@ -118,7 +118,7 @@ def post_comment(request, id):
         form = CommentForm(request.POST)
         if form.is_valid():
             savecomment = form.save(commit=False)
-            savecomment.post = image
+            savecomment.image = image
             savecomment.user = request.user
             savecomment.save()
             return HttpResponseRedirect(request.path_info)
