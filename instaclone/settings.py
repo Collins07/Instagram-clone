@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from decouple import config
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,7 +81,7 @@ WSGI_APPLICATION = 'instaclone.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'collo',
+        'NAME': 'collins',
         'USER': 'moringa',
         'PASSWORD':'Access',
     }
